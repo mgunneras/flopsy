@@ -1,7 +1,12 @@
-import simplejson
 import uuid
 
 from amqplib import client_0_8 as amqp
+
+try:
+    import simplejson
+except ImportError:
+    from django.utils import simplejson
+
 
 DEFAULT_HOST = '127.0.0.1'
 DEFAULT_USER_ID = 'guest'
